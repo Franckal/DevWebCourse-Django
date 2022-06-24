@@ -1,0 +1,60 @@
+/*Seletor Universal 
+*{
+    border: 1px solid red;
+}*/
+
+/* Seletor de texto
+h1{
+    color: green;
+}*/
+
+/* Seletor de Classe
+.verde{
+    color: green;
+}*/
+
+/* Seletor que aplica uma determina formação de classe 
+a um determinado elemento
+p.verde{
+    color: green;
+}*/
+
+/* Seletor de ID 
+#cabecalho{
+    border: 1px solid blue;
+}*/
+
+/* Seletores de Filho, lê-se de trás para frente
+Selecionar todos os "a" que são filhos DIRETOS de "li".
+li>a{
+    color: red;
+    text-decoration: none;
+}*/
+
+/* Seletores Descendentes, estes não importam se 
+é filho Direto ou não. Selecionam de qualquer forma
+os elementos que estão dento.
+Lê-se da mesma forma, Selecionar "a" descendente de "li".
+li a{
+    color: red;
+    text-decoration: none;
+}/*
+
+/* Seletor de Irmão Adjacente: Seleciona o elemtno que vem depois 
+de qualquer elemento, deve ser necessáriamente depois,
+e só seleciona aquele elemento em específico.
+h1 + p{
+    color: red;
+}*/
+
+/* Seletor de irmão geral 
+Seleciona todos do elemento especificado que são irmãos
+do principal, este porém, seleciona realmente todos,
+ao contrário do seletor adjacente, que só seleciona o primeiro
+irmão. 
+
+h1~p{
+    color: red;
+}*/
+
+
