@@ -1,0 +1,1244 @@
+inline style: utilizar os estilos linha por linha
+                método monótono e menos profissional.
+
+internal style sheet: utilizar uma folha de estilo 
+                        no próprio HTML
+
+external style sheet: utilizar um arquivo fora 
+    do próprio HTML.
+
+seletor: Espécie de Index, Qual estrutura será alterada. ex: p, h1, body, etc.
+propriedade: Qual propriedade será alterada Ex: Color, width, height, etc.
+Valor: Qual valor a propriedade adquire.
+
+ex:
+colocar no head:
+<style type="text/css">
+p{
+    color: red;
+}
+</style>
+
+----- CLASSES E ID -------
+class = .nome{
+
+}
+A Classe é um método utilizado para Classificar vários objetos
+que possuem as mesmas características.
+
+id = #nome{
+
+}
+O Id deve ser utilizado uma vez por página, ele só deve ser
+utilizado para objetos unicos e que não possuem características
+iguais a outros.
+
+------ DIV E SPAN -----------
+Div são divisões, Blocos do site, neles você pode atribuir
+as características que deseja.
+Os Divs são do tipo Block, logo, por padrão, ocupam uma linha completa
+da página, e são organizados de linha em linha, ou seja, cada div em uma linha.
+
+Span são divisões, porém sua característia é que se organizam um ao lado do outro,
+ao contrário do Div. Vários Span declarados, estarão um ao lado do outro.
+Vários div declarados, estarão um abaixo do outro.
+
+
+--------------BORDAS ---------------
+
+syntax: border: width style color;
+
+As bordas, como o próprio nome ja diz, contornam a estrutura
+classificada.
+Elas possuem diversas características e podem ser
+formatadas da forma como o Dev desejar:
+
+--------------- FONTES E CORES -----------------
+
+parameters: color: Aqui posso usar tanto o nome quanto o codigo hexadecimal/rgb
+font-size: auto explicativo
+font-family: neste você define uma família de fontes, de preferencia segura
+para que não haja problemas com o usuário. A ordem de fontes que digitar
+determinará a prioridade que o Site dará a cada uma.
+
+------------- TAMANHOS DE TEXTOS -----------------------
+principal parametro: font-size
+
+Temos vários tipos de tamanhos, os mais usados são:
+->> px, % e em
+
+px: tamanho fixo, o tamanho definido nele será o tamanho do texto.
+
+%: relativo ao padrão HTML: 16px. Usa como base o tamanho padrão
+Ex: ao definir 100%, você está usando os 16px
+Ao definir 200%, você está usando o dobro, 32px.
+
+em: Também relativo, porém este é relativo ao tamanho no container Pai.
+ex: tenho uma div dentro do body. Body formatado a um font-size
+de 20px. Se eu formatar essa div para 2em, estarei usando o dobro 
+do font-size do container pai. É possível usar decimais.
+Esse método é um dos mais eficientes, ja que você pode 
+determinar o tamanho de vários objetos através de um único
+seletor no css.
+
+------------- FORMATAÇÃO DE ESTILOS DE TEXTO ----------------------
+parameters: Temos diversos entre eles:
+font-size: tamanho
+font-family: tipo da família da fonte, nome da fonte
+font-weigth: peso da fonte
+font-style: estilo de fonte
+text-decoration: decorações: linha em cima, embaixo, cortando, etc..
+
+parametro font: nele você pode definir todas as propriedades junto:
+syntax: font: estilo, tamanho, familia, peso, etc.. ;
+
+
+------------------------ COR E IMAGEM DE FUNDO ------------------------
+O parametro usado para por uma imagem no fundo é:
+background-image: url("caminho");
+
+Este background será aplicado no container ao qual o 
+css está se referenciando.
+
+Outros parametros
+background-position: top, bottom, center, right, left
+background-attachment: Este define se a imagem vai ser
+    fixa na tela independente da rolagem ou não.
+    scroll, fixed.
+background-repeat: Define se a imagem irá repetir ou não.
+    repeat, no-repeat, repeat-x, repeat-y
+
+Para cores ao fundo, se usa o;
+background-color: red;
+
+
+------------------ MODELO DE CAIXA --------------------
+<div>
+            border
+               |
+              \/
+    _______________________         ________________
+    |        _____________ |        |               |
+    |padding | Conteúdo   || Margin |               |
+    |        |____________||        |_______________|
+    |______________________|
+</div>
+
+margin: parte de fora da box: margin-top, left, right, bottom;
+paddin: parte de dentro da box, entre o conteúdo e a border;
+        paddin-top, right, left, bottom;
+
+Na questão da margin, caso tenha dois margins definidos entre 
+        duas box, a margin maior que será considerada.
+
+------------------ ELEMENTOS FLUTUANTES -----------------------
+
+
+parameters: float: left, right, etc..
+clear: both, right, left, none;
+
+Quando usamos um elemento flutuante, ele está em outra
+    instancia, logo, flutua sobre os outros elementos fixos.
+Em caso de utilizarmos float e queremos que ele permaneça dentro da 
+    div pai, bastariamos utilizar o elemento clear em outro 
+    objeto logo abaixo, assim, este elemento empurraria a div 
+    para baixo. 
+
+
+------------------ ELEMENTOS BLOCK, INLINE, INLINE-BLOCK----------------
+
+Block: Ocupa todo o espaçamento da tela.
+            <h1>, <p>, <table>
+Inline: Ocupa o espaço de acordo o seu conteúdo.
+            <a>,<span>, <img>
+            display: inline;
+Inline-Block: Largura baseada em seu conteúdo.
+            Porém elementos ficam um abaixo do outro.
+            display: inline-block;
+            OBS: Só irá ficar abaixo um do outro, caso
+            não caiba mais na linha em questão.
+
+
+--------------------- POSICIONAMENTO(RELATIVE, ABSOLUTE, FIXED, STATIC)--------------
+
+position: ;
+static: Posicionamento padrão, separado de acorodo o fluxo normal do programa.
+relative: Posicionado relativamente de acordo com a sua posição padrão.
+            Assim, partindo do ponto padrão, você consegue 
+            colocar seu objeto na posição que desejar através de:
+            top, right, left, bottom;
+
+absolute: O elemento absoluto fica acima do fluxo padrão.
+        Ele está condicionado a posição do container pai,
+        desde que essa posição seja diferente de static.
+        Do contrário, ele será condicionado ao body.
+        O posicionamento absoluto acompanha a rolagem da página.
+
+fixed: Esse posicionamento é baseado na tela.
+        Ele se condiciona a permanecer fixo na tela
+        Não acompanha a barra de rolagem, ou seja,
+        indpeendente se você role, ele ficará na tela.
+
+O posicionamento de todos esses parametros é dado através de:
+top, left, right, bottom;
+
+-------------------- SOBREPONDO ELEMENTOS -----------------------
+O Posicionamento absoluto trás consigo vários artificios:
+Entre eles temos o artifício de sopreposição de elementos.
+
+Por Padrão, ao utilizarmos o absolute, a ordem de sobreposição se da
+do ultimo objeto ao primeiro. 
+Para alterar isso utilizamos do parametro: z-index: Número;
+
+Como é auto explicativo, a base de comparação é com base em números;
+o objeto que possuir maior z-index, irá sobrepor o restante.
+
+
+------------------------- FORMATANDO LINKS -------------------------------
+formatação padrão: a{}
+fomratação para um link ativo: a:link{}
+formatação para link ja visitado: a:visited{}
+formatação para quando passar o mouse sobre o link: a:hover{}
+formatação para quando clicar sobre o link: a:active{}
+
+----------------------- MAIS SOBRE SELETORES -------------------------
+Seletor Universal 
+*{
+    border: 1px solid red;
+}
+
+Seletor de texto
+h1{
+    color: green;
+}
+
+Seletor de Classe
+.verde{
+    color: green;
+}
+
+Seletor que aplica uma determina formação de classe 
+a um determinado elemento
+p.verde{
+    color: green;
+}
+
+Seletor de ID 
+#cabecalho{
+    border: 1px solid blue;
+}
+
+Seletores de Filho, lê-se de trás para frente
+Selecionar todos os "a" que são filhos DIRETOS de "li".
+li>a{
+    color: red;
+    text-decoration: none;
+}
+
+Seletores Descendentes, estes não importam se 
+é filho Direto ou não. Selecionam de qualquer forma
+os elementos que estão dento.
+Lê-se da mesma forma, Selecionar "a" descendente de "li".
+li a{
+    color: red;
+    text-decoration: none;
+}
+
+Seletor de Irmão Adjacente: Seleciona o elemtno que vem depois 
+de qualquer elemento, deve ser necessáriamente depois,
+e só seleciona aquele elemento em específico.
+h1 + p{
+    color: red;
+}*/
+
+Seletor de irmão geral 
+Seleciona todos do elemento especificado que são irmãos
+do principal, este porém, seleciona realmente todos,
+ao contrário do seletor adjacente, que só seleciona o primeiro
+irmão. 
+
+h1~p{
+    color: red;
+}
+
+----------------- HERANÇA E ESPECIFICADE ---------------------
+Seletores iguais, exceção important
+#pagina p{
+    color: red important;
+}
+
+#pagina p{
+    color: green;
+}
+
+
+Se um seletor for mais específico que outro a regra mais
+específica será aplicada 
+(terá precedência sobre regras mais gerais)
+*{
+    color: red;
+}
+
+h2{
+    color: blue;
+}
+
+h2.verde{
+    color: green;
+}
+
+h2#amarelo{
+    color: yellow;
+}
+
+------------------ CRIANDO BARRA DE NAVEGAÇÃO VERTICAL -------------------------
+ É possível colocar uma imagem no background através de:
+ background: url(Para voltar pasta é ../);
+
+Neste projeto, o professor optou por utilizar uma 
+imagem de 400px em um width de 200px, assim, poderia fazer um efeito
+interativo, que ao Hover, a imagem se movimente.
+neste caso, no próprio background, utilizamos os parametros
+
+no-repeat, apesar de não necessário neste caso, faz com que a imagems
+seja mostrada só uma vez.
+
+left/right, posiciona a imagem no lado que você deseja
+
+depois disso, basta abrirmos um seletor a:hover{}
+em seguida definimos o parametro background-position, 
+e atribuimos nele o valor contrário do background original.
+
+Para centralizar o texto, basta usarmos o parametro
+line-height, com o tamanho da height principal.
+
+text-indent: identa o texto, paragrafa.
+
+--------------------- MARCANDO PAGINA ATUAL ----------------------
+
+Para marcar uma página existem duas formas bem recorrentes:
+A primeira, utilizada para trabalhos relacionados com linguagens de programação
+
+#containerMaior .class a{
+    formatação
+}
+
+Denominar um id para o container maior de cada página, depois um class para o pai proximo
+ao link que você deseja formatar. 
+Depois basta atribuir naquela página que o link em específico, possui a class 
+de seleção que você denominou.
+
+A Segunda forma, também é utilizada, porém menos indicada para trabalhos com programação
+
+Atribuir um id para o container maior de cada página, body ou o que seja, depois um id para o container ul
+em seguida atribua uma classe para cada item da sua lista.
+
+no CSS, basta usar o seletor:
+
+#idContainerPagina #idContainerPai .classLiEspecífico a{
+    formatacao
+}
+
+----------------- CRIANDO NAVEGAÇÃO HORIZONTAL --------------------------
+A estrutura é a mesma da navegação vertical.
+ul{
+    <li><a></a></li>
+}
+
+O que muda, será no CSS: 
+na Formatação do ul, damos um 
+
+float: left; para corrigir o erro do background não mostrar
+ao usar o float.
+
+também no ul a, damos um
+
+ul li{
+    float: left;
+}
+Precisamos que as linhas flutuem para organizamos uma ao lado da outra.
+
+Nos links definimos eles como Block, para podermos definirmos tamanho e alinhamentos
+ul a{
+    display: block;
+    padding: 0 2em;  tamanho de cada link
+    line-height: 2em; alinhando o texto ao centro.
+    background: url(../../nome.jpg);
+}
+
+Para darmos o efeito de hover, podemos utlizar também uma 
+formatação com:
+
+a:hover{
+    background:
+    color:
+}
+
+Em seguida, para manter selecionado, usamos os ids, seletores e classes, 
+para selecionar o link em questão e manter o hover.
+#idContainerPagina #idContainerPai .classLiEspecífico a
+{
+    formatacao
+}
+
+---------------- NAVEGAÇÃO COM ABAS -------------------------
+
+layout de sempre:
+<ul>
+    <li><a></a></li>
+</ul>
+
+Nesse em específico iremos trabalhar com imagens e não com cores
+codigos básicos:
+
+ul li{
+    float: left;
+    background: url() no-repeat top right; -- aqui definimos a imagem que irá dar a curvatura direita.
+}
+
+li link{
+    display: block; Aqui definimos o tipo block, pois assim podemos definir o tamanho do container do link
+    paddin: 0 2em;
+    line-height: 3em;
+    text-decoration: none;
+    background: url() no-repeat top left; aqui definimos a imagem que fará a borda esquerda de cada li.
+}
+
+Mantendo aba selecionada:
+
+utilizamos novamente o 
+a:hover{
+    formatação do link
+}
+
+li #idAtual{
+    background: url(imagemSelecionadaDireita) no-repeat top right;
+}
+
+li #idAtual a{
+    background: url(imagemSelecionadaEsquerda) no-repeat top left;
+}
+
+No meu arquivo html, defino um id para a linha do link que esteja selecionado.
+em seguida utilizo o li #id e o li #id a, para colocar as duas imagens
+a com a curvatura na direita, e a com curvatura no esquerda.
+uma sobrepoe a outra e o desenho é formado. 
+
+Após isso basta preencher os dados. 
+
+---------------------- LAYOUT COM LARGURA FIXA -----------------------------
+
+Para criar um layout com largura fixa, basta definir uma largura em pixels.
+
+Mesmo com Floats, A largura permanece fixa, o que deixa
+o acabamento pouco profissional. 
+
+----------------------- LAYOUT LIQUIDO ---------------------------------
+Para trabalhar com layouts líquidos basta definir o width com 
+porcentagem, dessa forma você irá fazer ele reduzir ou aumentar de acordo
+com o tamanho da tela. 
+
+width: 80%;
+
+Os demais containers devem ter o width corrigido para porcentagem também, 
+dessa forma todo o layout se movimentará junto.
+
+Para evitar que os textos saiam do container, basta definir uma 
+
+min-width, assim, você trava o layout em uma largura mínima permitida
+
+é aconselhavel trabalhar com max-width também, pois isso evita que 
+o layout fique estranho caso a tela seja muito grande.
+
+também exitem os parâmetros max-height e min-height, para a altura.
+
+
+--------------------------- IMAGENS LIQUIDAS --------------------------------------
+
+Para a imagem podemos usar os mesmos parametros mencionados no tópico anterior
+width: 80%;
+lembrando, para líquidez, utilizamos sempre a porcentagem.
+
+Podemos tanto criar uma imagem e definir a ela uma classe.
+Ou criar uma DIV e formatar a div em questão.
+
+img .classe{
+    parametros;
+}
+
+#idDiv img{
+    parametros;
+}
+
+----------------------- COLUNA FALSA ----------------------------------
+Para utilizarmos a coluna falsa, o layout precisa ser fixo.
+Caso seja líquido, o layout irá quebrar.
+
+Coluna falsa nada mais é do que uma imagem com as cores desejadas para
+a coluna, assim fazemos ela repedir verticalmente, e está pronto.
+
+No Background do container, utilizamos o parametro url, para definir a imagem.
+
+#container{
+    background: cor url(../pastas) repeat-y;
+}
+
+Por padrão, os elementos url são adicionados na parte superior esquerda,
+então caso sua coluna seja nesse lado, não é necessário declarar os parâmetros
+top left, caso seja na direita, poderia declarar, top right.
+
+
+---------------------- ESTILIZANDO TABELAS -------------------------------
+
+Estrutura da criação de uma tabela, como ja foi dito nas anotações de HTML:
+
+<table>
+    <tr>
+        <th>Cabeçalho</th>
+        <th>Cabeçalho2</th>
+    </tr>
+    <tr>
+        <td>Dado<td>
+        <td>Dado2</td>
+    </tr>
+</table>
+
+Agora vamos para a estilização:
+Para estilizarmos todas as tabelas do site, utilizamos:
+table{
+    Podemos definir tamanho, espaçamento entre linhas:
+    width: 600px;
+    table-collapse: separate, collapse; ->> Se separate, haverá
+                    espaço entre as linhas e colunas.
+                    se collapse, não haverá espaço entre as linhas e colunas.
+}
+
+Para estilizar o th e o td juntos fazemos:
+th, td{
+    padding: 7px;
+}
+
+Outros parametros:
+th{
+    text-transform: uppercase;
+    --> Auto Explicativo, esse parametro faz com que mude o texto para a formatação desejada.
+
+    letter-spacing: 0.1em;
+    --> Esse parametro faz com que as letras do seletor em específico
+            fiquem espaçadas entre si.
+}
+
+tr:hover{
+    Assim como no link, em cada linha da tabela podemos utilizar o hover.
+    background-color: cor;
+}
+
+para alternar as cores entre cada linha da tabela 
+criamos uma classe linha sim linha não
+e no Css aplicamos:
+.classe{
+    background-color: cor;
+}
+
+---------------------- ESTILIZANDO FORMULÁRIOS -----------------------------
+Como ja informado nas anotações de HTML:
+Para criarmos um formulário utilizamos o parâmetro form:
+<form>
+</form>
+
+Para definirmos uma área que irá conter dados semelhantes usamos:
+<form>
+    <fieldset>
+    </fieldset>
+</form>
+
+Para definirmos um nome para ficar como título dessa fieldset usamos
+o parâmetro.
+<form>
+    <fieldset>
+        <legend>Legenda do fieldset</legend>
+    </fieldset>
+</form>
+
+Para cada informação que iremos receber, é boa prática criar uma div.
+Dentro de cada div, atribuimos um label (etiqueta) e um input 
+para receber os dados.
+<form>
+    <fieldset>
+        <legend>Legenda do fieldset</legend>
+        <div>
+            <label for="id do input referente">Etiqueta1</label>
+            <input type="" name="" id="">
+        </div>  
+
+        <div>
+            <label for="id do input referente">Etiqueta2</label>
+            <input type="" name="" id="">
+        </div>       
+    </fieldset>
+</form>
+
+# Para recebermos mensagens longas, utilizamos o:
+<textarea name="" id=""></textarea> e não o <input>
+É interessante um Label referenciado ao id da textarea.
+
+Revendo: Para utilizarmos um botão clicável, usamos o input type radio:
+<input type="radio" name="" id=""> Texto refefência
+
+CSS:
+Cada um dos elementos de formulários usados nesse exemplo pode ser formatado.
+
+- Formatando Fieldset:
+fieldset{
+    padding: ;
+    margin: ;
+    background: ;
+    border: ;  
+}
+
+- Formatando Legend:
+legend{
+    font-weigth: bold;
+}
+
+- Formatando Label:
+label{
+    display: block; -> O padrão é inline, caso queira deixar o input abaixo, use o block
+    cursor: pointer;
+}
+
+- Formatando input:
+input{
+    width: 20em;
+}
+Podemos usar o input[type="tipo"], e assim, ser mais expecíficos na estilização
+Porém, navegadores mais antigos não comportam essa forma.
+
+- Formatando textarea:
+textarea{
+    width: 20em;
+    height: 10em;
+}
+
+- Sendo expecíficos no input de outra forma:
+Para sermos expecíficos de uma forma que os navegadores antigos comportem
+podemos criar classes para cada input no index, e em seguida
+acessa-las no css:
+
+input.radio, input.submit, input.checkbox{
+    width: auto;
+}
+
+- Acessando uma classe de input para formatar diretamente:
+Basta usar o seletor de classe, simples:
+.radio{
+    margin-rigth: 1em;
+}
+
+
+--------------------- ESTILIZANDO FORMULÁRIOS 2 -------------------------
+Agora iremos fazer um formulário de login básico:
+Login, senha, botão Login.
+
+no HTML:
+    Iniciaremos criando um container para agrupar o formulário.
+<div id="container">
+
+</div>
+
+No CSS:
+    Formatamos o container:
+#container{
+    width:;
+    heigh:;
+    background-color: ;
+    -webkit-border-radius: Xpx;
+    -moz-border-radius:Xpx; Estes são configurações de prefixo
+    border-radius: Xpx; Este parametro define uma borda curvada
+    margin: 0 auto;
+    margin-top: 120px;
+    text-align: center; Este é para centralizar as imagens que vamos adicionar ao container.
+                        Pode ser definido em cada imagem também.
+}
+
+no HTML:
+Em seguida colocaremos uma imagem para estilizar e iniciamos o formulário:
+<div id="container">
+    <img src="perfil">
+
+    <form>
+
+    </form>
+</div>
+
+no CSS: 
+Vamos formatar a imagem dentro do container:
+#container img {
+    width: 120px;
+    height: 120px;
+    margin-top: -60px; Ao definirmos um margin top negativo, com metade da altura da imagem
+                        faremos com que a imagem flutue exatamente no meio da borda do container.
+    margin-bottom: 30px;
+}
+
+no HTML:
+Adicionaremos uma div para cada input e colocaremos classes neles
+para podermos formata-los:
+<div id="container">
+    <img src="perfil">
+
+    <form>
+        <div>
+            <input type="" class="1" name="" id="" placeholder="">
+        </div>
+
+        <div>
+            <input type="" class="2" name="" id="" placeholder="">
+        </div>
+        ->> O placeholder é um parametro para escrever uma mensagem dentro do input.
+        
+        <div>
+            <input type="" class="3" name="" id="">
+        </div>
+    </form>
+</div>
+
+no CSS:
+Formataremos os inputs:
+
+input{
+    height: 40px;
+    width: 80%;
+    font-size: 18px;
+    margin-bottom: 10px;
+    background-color: #FFF;
+    padding-left: 40px;
+    border: none;
+    background-repeat: no-repeat; Para os icones não repetirem
+    background-position: 10px; Distanciar os ícones da borda esquerda.
+}
+
+input.1{
+    background-image: url(); imagem do icones
+        usamos o background-image, porque queremos que o icone sobreponha a cor do background, 
+        e não a substitua.
+}
+
+input.2{
+    background-image: url(); imagem do icones
+}
+
+input.3{
+    Por ser um submit: definiremos mais parametros, para estiliza-lo melhor.
+    color: #FFF;
+    background-color: #f79300;
+    border: 2px solid #db7d00;
+    padding: 5px 20px;
+    height: 45px;
+    width: 90%;
+    background: -webkit-linear-gradient(to bottom, #faa600, #f68a00);
+    background: -moz-linear-gradient(to bottom, #faa600, #f68a00);
+    background: -o-linear-gradient(to bottom, #faa600, #f68a00);
+    background: linear-gradient(to bottom, #faa600, #f68a00);
+
+    linear-gradient, faz uma cor que no top é uma, no bottom é outra.
+    cor gradiente.
+}
+
+----------------- ARREDONDAMENTO COM IMAGENS --------------------------------
+Para fazer um arredondamento de um container com imagens, basta 
+fazer as imagens bem definidas em algum app(Photoshop, etc..), e em seguida exportar para o CSS.
+
+No HTML:
+<div class="a">
+    <h2></h2>
+    <p></p>
+    <div class="ultimo"></div>
+</div>
+
+bem simples
+no CSS:
+Iremos atribuir um background para a div principal, que é a mesma cor das suas imagens
+em seguida a imagem de topo é atribuida no h2, e a de baixo
+é atribuída na div Ultimo criada logo abaixo.
+.a{
+    background: cor;
+}
+
+.a h2{
+    background: fundo cima;
+}
+
+.a .ultimo{
+    background: fundo baixo;
+    Como se trata de uma div, deveremos colocar as dimensões dela baseada na foto.
+    width: ;
+    height: ;
+}
+
+Se a imagem for mais elaborada, é interessante atribuir o fundo centro,
+a div principal;
+.a{
+    background: fundo centro;
+}
+
+
+----------------------- EFEITO PARALLAX ---------------------------------------------
+
+Para construir um site com o efeito parallax você deve:
+1- Definir a altura do html e do body de 100%
+
+html, body{
+    heigh: 100%
+    padding: 0;
+}
+
+2- Criar suas caixas para formatar:
+<div class="caixa1">
+    <div class="conteudo-titulo">
+        <span class="titulo">Caixa1</span>
+    </div>
+    
+</div>
+
+<div class="conteudo">
+    Conteudo
+</div>
+
+<div class="caixa2">
+    <div class="conteudo-titulo">
+        <span class="titulo">Caixa2</span>
+    </div>
+</div>
+
+<div class="conteudo">
+    conteudo
+</div>
+
+<div class="caixa3">
+    <div class="conteudo-titulo">
+        <span class="titulo">Caixa3</span>
+    </div>
+</div>
+
+
+Obs:: Os spans foram criados para auxiiar no momento de centralizar os textos na tela..
+
+No CSS:
+Iremos definir parametros para todas as caixas juntas:
+.caixa1, .caixa2, .caixa3{
+    position: relative; --> Auxliar na centralização dos textos.
+    height: 100%; --> Ocupar todo o espaço da tela, para conseguirmos executar o efeito.
+    opacity: 0.7; --> Decorativo
+    background-repeat: no-repeat;
+    background-size: cover; ---> Esses 2 fazem com que a imagem não repita e continue preenchendo
+                                Toda a tela ao dar ou tirar zoom.
+    background-position: center; ---> fazer a imagem do background ficar centralizada;
+    backgorund-attachment: fixed; --> Esse é o X da questão
+                                        Esse parametro faz com que a imagem fique travada ao atingir o "teto da página";
+                                        Trazendo assim o efeito parallax.
+
+}
+
+
+Agora iremos definir uma imagem para cada caixa;
+.caixa1{
+    background-image: url();
+}
+.caixa2{
+    background-image: url();
+}
+.caixa3{
+    background-image: url();
+}
+
+Para centralizarmos os títulos na tela usamos:
+Aplicaremos as formatações a div conteudo-titulo
+e em seguida ao span:
+
+.conteudo-titulo{
+    position: absolute; --> utilizamos o absolute para poder manipular a posição como queremos;
+    top: 45%; --> Definindo a distancia do topo, aqui os 45% centraliza bem na tela.
+    left: 0; --> Iremos ocupar toda o comprimento, não precisamos de distancia a esquerda.
+    width: 100%; --> Fazendo a div ocupar toda a tela, poderemos centralizar a span,
+                    e assim teremos um texto totalmente centralizado.
+    text-align: center; --> Aqui estamos centralizando os conteudos da div, 
+                            Ja que a div ocupa toda a tela, os conteudos centralizam na tela.
+    
+}
+
+.conteudo-titulo span.titulo{
+    Aqui formatamos letras, tamanhos, etc;
+}
+
+
+---------------------- NORMALIZE ------------------------------------
+Usado para padronizar a visualização entre os browsers.
+
+Basta Pesquisar por Normalize css, fazer o download, copiar o link ou o conteudo,
+caso copie o conteúdo, cria um arquivo css e importa para o html.
+Isso corrige bugs e padroniza visualizações:
+
+Normalize css
+<link rel="stylesheet" href="css/normalize.css">
+
+
+---------------------------BOX SIZING E BORDER RADIUS -----------------------
+
+border-radius é usado para arredondar os cantos de um container:
+boder-radius: (top left) (top right) (bottom right) (bottom left);
+border-radius: general;
+border-radius: (top left bottom right) (top right bottom left)
+
+
+box-sizing faz com que o container não altere seu tamanho total ao usarmos padding:
+box-sizing: border-box;
+Assim estamos deixando o tamanho da box de acordo com a definição de width e height
+que damos anteriormente. 
+ao utilizarmos o padding, ele será adaptado para o tamanho da caixa e não irá
+adiciona tamanho.
+
+-------------------------- DEGRADÊ E TRANSPARENCIA -----------------------------------
+Para utilizarmos a transparência basta usarmos o rgba para definir uma cor:
+rgba: Red, Green, Blue, Alpha(Opacidade da cor);
+
+A opacidade deve ser definida para 0 < x < 1, sendo 0 totalmente preto, e 1 sem alteração nenhuma.
+
+EXEMPLO: background: rgba(255, 255, 255, 0.5);
+
+Degradê, temos vários tipos de degradê, o mais básico deles é o linear::
+
+linear-gradient(direção, cor, cor, cor..);
+Posso definir quantas cores quiser.
+Sintaxe da direção: to top, to right, to left, to bottom;
+Também é possível definir os graus em que as cores vão começar: 120deg;
+
+Existe também o degradê radial, este vai de dentro pra fora ou fora pra dentro:
+
+radial-gradient(cor, cor, cor, cor);
+Não importa o número de cores;
+
+
+------------------------ SOMBRAS ----------------------------------
+Para utilizar sombras temos dois :
+text-shadow = Sombra em textos
+box-shadow = Sombra em containers.
+
+Parâmetros: 
+text-shadow: (Pixels left/right) (Pixels top/bottom) (Pixels de Blur) (Pixels de Spread)
+                (Cor [rgb, rgba, #, nome])
+            Sendo Blur = Borrão/Mancha
+            Sendo Spread = Propagação, extensão;
+box-shadow funciona da mesma forma;
+
+
+-------------------------- ANIMAÇÕES ---------------------------------
+
+Antigamente para utilizarmos animações era necessário trabalhar com
+ferramentas próprias de animação.
+Agora isso é possível somente com CSS.
+
+Para iniciar nossa animação utilizamos:
+@keyframes nome{
+    from{} --> Como começa
+    to{} ->>> Como termina
+}
+
+Vamos utilizar o exemplo de animar uma div simples:
+Criamos em nosso html a div #caixa;
+
+CSS:
+Começaremos formatando nossa #caixa:
+#caixa{
+    width: 300px;
+    height: 300px;
+    background: red;
+}
+
+Agora vamos para o Keyframe:
+@keyframes nome{
+    from{
+        background: red; 
+    }
+    to{
+        background: green;
+    }
+}
+
+Temos a animação criada, agora teremos que defini-la em nossa #caixa
+#caixa{
+    width: 300px;
+    height: 300px;
+    background: red;
+    animation-name: nome; --> Passamos o nome da animação
+    animation-duration: 5s; --> Passamos o tempo de duração da animação 
+}
+
+Com isso ja temos nossa animação pronta.
+Vale Lembrar que ao trabalhar com animações, é interessante que você
+use os prefixos dos navegadores, tanto no 
+keyframes, quanto nos parâmetros animation:
+@-webkit-keyframes nome{}
+@-moz-keyframes nome{}
+@-o-keyframes nome{}
+@keyframes nome{}
+
+#caixa{
+    -webkit-animation-nome:;
+    -moz-animation-nome:;
+    -o-animation-nome:;
+    animation-nome:;
+
+    Isso deve ser passado para cada parâmetro animation utilizado.
+}
+
+Para ficar mais fácil a definição dos prefixos, é interessante
+que se trabalhe com o parâmetro animation
+Este é geral, e você define na ordem as formatações da animação.
+
+#caixa{
+    animation: (nome, duração, delay, iteration-count, direction)
+    Parametro iteration-count: Define uma quantidade de repetições da animação
+    Direction: Ao Dar um Alternate nela, a animação faz o processo de ir e voltar;
+}
+
+VocÊ consegue fazer o container se movimentar assim:
+
+Defina position: relative em sua #caixa
+agora faça:
+from{
+    top: 0;
+    left: 0;
+}
+to{
+    top: 300px;
+    left: 300px;
+}
+
+------------------------ TRANSIÇÕES ---------------------------
+Parametro Transition no Hover;
+OBS: Para o transition são necessários os prefixos:
+
+Defina uma div #caixa no html;
+Formate sua caixa e dê o hover:
+
+#caixa{
+    width: 300px
+    height: 300px; 
+    background: orange;
+}
+
+#caixa:hover{
+    width: 400px
+    background: yellow;
+}
+
+Dessa forma, quando passarmos o mouse a #caixa irá 
+imediatamente mudar;
+Parâmetro transition:
+No Transition, caso você não queira fazer a transição de todos os elementos,
+precisará citar o nome do parametro antes de definir a transição,
+separe entre vírgula cada parâmetro:
+
+#caixa:hover{
+    width: 400px
+    background: yellow;
+    transition: width 3s, background 3s;
+        Parametro, tempo de transição.
+    Para formatar todos juntos, basta dar um:
+    transition: all (tempo de transição);
+    Prefixos:
+    -webkit-transition: ;
+    -moz-transition: ;
+    -o-transition:;*/
+}
+
+
+---------------------- NOVAS TAGS HTML 5 -----------------------------
+
+<header>
+    Usada para definir o container de cabeçalho;
+</header>
+
+<nav>
+    Usada para definir o container de barra de navegação;
+</nav>
+
+<footer>
+    Usada pra definir o rodapé.
+</footer>
+
+<article>
+    Conteúdos que representam um apostagem.
+    Blog: Postagem.
+    Site de Empresa: Informações sobre a empresa;
+</article>
+
+<section>
+    Separação de seções, dentro do Article;
+</section>
+
+<time>
+    Simboliza que terá uma data após isso.
+    Não muda nada, porém facilita no momento de formatar
+    a data no CSS;
+    Além de dar mais significado ao código;;
+</time>
+
+<aside>
+    Áreas laterais. 
+</aside>
+
+Podem ser manipuladas no CSS com os seletores normais: header, nav, footer;
+
+---------------------- NOVAS TAGS DE INPUT -----------------------------
+<label for="">Nome</label>
+<input type="" id="">
+
+name------------
+<label for="nome">Nome</label>
+<input type="text" id="nome" required autofocus>
+
+required: Torna o preenchimento do campo obrigatório.
+autofocus: Faz com que o campo com esse parâmetro comece selecionado.
+
+email-----------
+<label for="email">Email</label>
+<input type="email" id="email" required>
+
+number--------------
+<label for="numero">Numero</label>
+<input type="number" id="numero" min="1" max="10" step="2">
+
+min: Define o mínimo que o usuário poderá enviar;
+max: Define o máximo que o usuário poderá enviar;
+step: Usando as setinhas, define de quantos em quantos números
+    cada clique na seta irá mudar;
+
+URL-------------------
+<label for="url">URL</label>
+<input type="url" id="url" placeholder="ex: http://www...">
+
+Só aceitará urls, o placeholder é viável para evitar confusões do usuário;
+
+Pesquisa---------------------
+<label for="pesquisa">Pesquisa</label>
+<input type="search" id="pesquisa">
+
+Aqui facilita a interação do usuário, pois poderá apagar o conteúdo digitado com um clique
+no X na parte direita do container input;
+
+Range-------------------------
+<label for="range">Range</label>
+<input type="range" id="range" min="1" max="20" value="10">
+
+min e max padrão;
+value: define onde irá começar o Ponto.
+
+Data------------------------
+<label for="data">Data</label>
+<input type="date" id="data">
+
+
+Cor-------------------------
+<label for="cor">Cor</label>
+<input type="color" id="cor">
+
+Muitos desses podem não funcionar devido a compatibilidade;
+sempre pesquisar antes.
+
+
+------------------------- FLEX BOX --------------------------------
+display: flex;
+Permite organizar elementos dentro de um container de forma flexível,
+de acordo com a sua necessidade;
+
+no HTML:
+<h1>Flexbox</h1>
+
+<div id="conteudo">
+    <div class="item">01</div>
+    <div class="item">02</div>
+    <div class="item">03</div>
+    <div class="item">04</div>
+</div>
+
+no CSS:
+
+Iremos formatar o conteúdo primeiramente:
+#conteudo{
+    background: #dcdcdc;
+    height: 400px;
+    display: flex;
+}
+
+Formatando o item:
+.item{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background: white;
+    border: 1px solid gray;
+}
+
+A partir da definição do diplay como flex, poderemos utilizar 
+os seguintes parâmetros:
+
+display-direction: ;
+/* row | row-reverse | column | column-reverse */
+(padrão)row: Os itens ficam posicionados em uma linha;
+row-reverse: Os itens ficam posicionados em uma linha, porém na ordem contrária;
+column: Os itens ficam posicionados em uma coluna;
+column-reverse: Os itens ficam posicionados em uma coluna, porém na ordem contrária;
+
+
+flex-wrap: ; 
+/*nowrap | wrap | wrap-reverse */
+(padrão)nowrap: Os itens não vão quebrar a linha quando a página for reduzida, irão 
+                se adaptar ao tamanho do width;
+wrap: Os itens irão quebrar a linha quando não couberem mais;
+wrap-reverse: Os itens serão posicionados no bottom, e quebrarão para cima quando não couberem;
+
+justify-content: ;
+/* flex-start | flex-end | center | space-between | 
+    space-around
+*/Aqui definiremos o alinhamento entre esquerda e direita;
+
+(Padrão)flex-start: Os itens serão posicionados na ESQUERDA do container;
+flex-end: Os itens serão posicionados na DIREITA do container;
+center: Os itens serão posicionados no centro do container;
+space-between: O espaçamento entre os itens será igual;
+space-around: O espaçamento entre os itens será igual, porém os dois
+        que ficam nas bordas ficarão um pouco mais afastados da border;
+
+align-items: ;
+/* stretch | center | flex-start | flex-end | baseLine */
+Aqui faremos o alinhamento entre top e bottom;
+
+(padrão)strectch: Os elementos vão ocupar do topo até o bottom do container;
+center: Os elementos ficarão no centro do container;
+flex-start: Os elementos ficarão no top do container;
+flex-end: Os elemtnos ficarão no bottom do container;
+baseLine: Caso algum dos elementos seja maior que o outro,
+        Irão alinhar o restante com base na linha do texto;
+
+Parâmetro order: ;
+Esse parâmetro atribui a ordem que serão mostrados os itens;
+o item que tiver o order maior, aparecerá primeiro;
+
+Parâmetro flex-grow;
+Esse parametro é passado ai Flex Item, dentro do Container com o display: flex;
+O flex-grow define quanto o item vai crescer ao aumentar o tamanho da página;
+Caso queira mudar apenas um dos itens:
+Defina uma classe separada com o flex-grow e atribua ao item.
+O padrão é 0;
+Caso haja mais de um item com o flex-grow, será adaptado a isso.
+Um item que tem um flex-grow maior, cresce mais.
+
+Parametro flex-shrink: ;
+Este parâmetro, ao contrário do flex-grow, define o quanto o item
+vai diminuir ao estreitar a tela.
+
+Parâmetro flex-basis: ;
+Este parâmetro define o tamanho inicial do item antes de executarmos
+alguma mudança no layout.
