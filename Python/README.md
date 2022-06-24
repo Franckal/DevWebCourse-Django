@@ -6,6 +6,6 @@
 :three: Encapsulation  
 4️⃣ Abstraction
 ## 
-Also practice: Exceptions, Modules, Packeges.
+Also practice: Exceptions, Modules, Packages.
 
 
