@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando atributos</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" >
+</head>
+
+<body>
+    
+    <img id="imagem" src="img/celular.png" width="500">
+
+    <a id="link" href="https://www.google.com">Clique aqui</a>
+
+    <button onclick="alterar()">Clique Aqui</button>
+
+    <script type="text/javascript">
+        
+        function alterar(){
+            /* const img = document.querySelector('#imagem')
+            img.src = "img/grafico.png" */
+            const link = document.querySelector('#link')
+            link.href = "https://www.bing.com"
+        }
+
+        //const img = document.querySelector('#imagem')
+        
+        //let atributo = 'src'
+        //console.log(img.getAttribute(atributo))
+        //console.log(img['src'])
+        //console.log(img.width)
+    </script>
+
+</body>
+</html>

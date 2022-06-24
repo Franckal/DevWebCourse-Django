@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" >
+</head>
+<body>
+    
+    <div>Irmão Anterior</div><div id="itens"><p>Primeiro Elmeento</p><p>Segundo Elmeento</p><p>Terceiro Elmeento</p><p>Quarto Elmeento</p></div><div>Próximo Irmão</div>
+
+
+    <script type="text/javascript">
+        
+        const lista = document.querySelector('div#itens')
+        //console.log(lista.parentNode)
+        //console.log(lista.childNodes[3])
+        //console.log(lista.firstChild)
+        //console.log(lista.lastChild)
+        //console.log(lista.nextSibling)
+        console.log(lista.previousSibling)
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atributos personalizados</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" >
+</head>
+
+<body>
+    
+    <span id="itens" quantidade="2" data-status="pendente">
+        2 itens no carrinho
+    </span>
+
+    <ul>
+        <li codigo="001">Jamilton</li>
+        <li codigo="002">Ana</li>
+    </ul>
+
+    <label id="labelNome" for="nome">Nome</label>
+    <input type="text" id="nome" name="nome" />
+
+    <script type="text/javascript">
+
+        //const obj = document.getElementById('itens')
+        //console.log(obj.id)
+        //obj.setAttribute('quantidade', 3)
+        //console.log(obj.getAttribute('quantidade'))
+        
+        //console.log(obj.hasAttribute('quantidade'))
+        //obj.removeAttribute('data-status')
+        //obj.dataset.status = "finalizado"
+        //console.log(obj.dataset.status)
+        //console.log(obj.attributes.quantidade)
+
+        const obj = document.getElementById('labelNome')
+        //console.log(obj.getAttribute("for"))
+        console.log(obj.htmlFor)
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionando elementos</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" >
+</head>
+<body>
+    
+    <form action="" name="cadastro">
+        <input type="text" name="nome" id="nome">
+        <input type="text" name="email" is="email">
+        <select name="sexo" id="sexo">
+            <option value="">--</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+        </select>
+    </form>
+    
+    <button onclick="modificar()">Clique aqui</button>
+
+
+    <script type="text/javascript">
+        
+        function modificar(){
+            /*
+            document.cadastro.nome.value = "Franck"
+            document.cadastro.email.value = "franckallyson@hotmail.com"
+            document.cadastro.sexo.value = "masculino"*/
+            /*let nome = document.cadastro.nome.value
+            let email = document.cadastro.email.value
+            let sexo = document.cadastro.sexo.value
+            console.log(nome)
+            console.log(email)
+            console.log(sexo)*/
+            const obj = document.getElementById('nome')
+            console.log(obj.value)
+        }        
+    </script>
+
+</body>
+</html>

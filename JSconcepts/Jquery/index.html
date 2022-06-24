@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<script type="text/javascript" 
+	src="js/jquery-3.5.1.min.js"></script>
+
+	<script type="text/javascript" 
+	src="js/script.js"></script>
+
+</head>
+<body>
+
+	<h1>Configurando e vendo na prática</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus dolor, aliquam laoreet dui id, laoreet molestie neque. </p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus dolor, aliquam laoreet dui id, laoreet molestie neque. </p>
+
+	<ul>
+		<li>Jamilton</li>
+		<li>Ana</li>
+		<li>Pedro</li>
+	</ul>
+
+    <div id="conteudo">
+
+    </div>
+
+    <button acao-clique>Clique</button>
+	<script type="text/javascript">
+		
+		//$('p').hide(5000)
+        //let itens = $('ul').text()
+        //$('#conteudo').text( itens )
+        //$('li').addClass('destaque')
+        $('[acao-clique]').click(function(){
+            //$('li').addClass('destaque')
+            //$('#conteudo').text( $('ul').text() )
+            $('p').toggle()
+        })
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

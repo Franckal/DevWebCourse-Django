@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alterando Conteúdos</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<script type="text/javascript" 
+	src="js/jquery-3.5.1.min.js"></script>
+
+	<script type="text/javascript" 
+	src="js/script.js"></script>
+</head>
+<body>
+
+    
+    <h1>Selecionando Elementos</h1>
+
+    <p><strong>Paragrafo 1</strong></p>
+    <p><strong>Paragrafo 2</strong></p>
+	<ul id="lista" quantidade="6">
+		<li>Jamilton</li>
+		<li>Ana</li>
+		<li>Pedro</li>
+        <li>Maria</li>
+        <li>João</li>
+        <li>Joana</li>
+	</ul>
+
+    <hr>
+
+    <div id="conteudo">
+        <span>Conteudo 1</span>
+        <span>Conteudo 2</span>
+    </div>
+
+    <button acao-clique>Clique</button>
+	<script type="text/javascript">
+		
+        
+        $('[acao-clique]').click(function(){
+
+            /* Inserindo elementos */
+            /* before->antes after->depois */
+            //$('#conteudo').after('<strong>Jamilton</strong>')
+            //$('#conteudo').before('<strong>Jamilton</strong>')
+
+            //$('<strong>Jamilton</strong>').insertBefore('#conteudo')
+            //$('<strong>Jamilton</strong>').insertAfter('#conteudo')
+
+            /* append->acrescenta  prepend->prefixa */
+            //$('#conteudo').prepend('[ANTES]')
+            //$('#conteudo').append('[DEPOIS]')
+            //$('#conteudo').prepend('[ANTES]').append('[DEPOIS]')
+
+            // $('<span>[ANTES]</span>').prependTo('#conteudo')
+            //$('<span>[DEPOIS]</span>').appendTo('#conteudo')
+
+            //const lista = ['ANTES1', 'ANTES2', 'ANTES3']
+            //$('#conteudo').append('[DEPOIS]', 'Depois 2')
+            //$('#conteudo').prepend(lista)
+
+            //$('h1').remove()
+            //const retorno = $('h1').detach()
+            //$('#conteudo').before(retorno)
+
+            //const retorno = $('h1').clone()
+           // $('#conteudo').before(retorno)
+
+           /* Criar e envolver elementos */
+           //let item = $('<li>').append('Novo')
+           //$('ul').append(item)
+           //let p = $('<p>').append('Paragrafo')
+           //$('#conteudo').prepend(p)
+
+           //$('#conteudo').wrap('<div>')
+
+            //$('p').wrap('<div>')
+            //$('p').wrapAll('<div>')        
+            //$('span').unwrap()
+            //$('#conteudo').empty()
+
+            //$('#conteudo').replaceWith('<span>j</span>')
+            //$('<span>j</span>').replaceAll('#conteudo')
+
+            $('p').replaceWith(function(){
+                const texto = $(this).html()
+                return $('<span>').html(texto)
+            })
+            
+
+
+        })
+		
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

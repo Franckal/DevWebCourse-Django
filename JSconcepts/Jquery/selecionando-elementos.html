@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selecionando elementos</title>
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+	<script type="text/javascript" 
+	src="js/jquery-3.5.1.min.js"></script>
+
+	<script type="text/javascript" 
+	src="js/script.js"></script>
+</head>
+<body>
+
+    <div style="display: none" id="area">
+        <h1>Selecionando Elementos</h1>
+        
+    </div>
+	
+    <h3 style="display: none">Seletores e filtros</h3>
+	<p style="display: none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus dolor, aliquam laoreet dui id, laoreet molestie neque. </p>
+	<p style="display: none">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris lectus dolor, aliquam laoreet dui id, laoreet molestie neque. </p>
+
+	<ul style="display: none" id="lista">
+		<li>Jamilton</li>
+		<li>Ana</li>
+		<li>Pedro</li>
+        <li>Maria</li>
+        <li>João</li>
+        <li>Joana</li>
+	</ul>
+
+    <h1>Formulário</h1>
+    <form id="cadastro">
+
+        <input type="text" placeholder="Nome">
+        <input type="password" placeholder="Senha">
+        <hr>
+        <input type="radio">
+        <input type="checkbox">
+        <hr>
+        <input type="submit" value="Salvar">
+
+    </form>
+    <hr>
+
+    <div style="display: none" id="conteudo">
+        Conteúdo
+    </div>
+
+    <button acao-clique>Clique</button>
+	<script type="text/javascript">
+		
+        //const obj = jQuery('ul li')
+        //const obj = $('h1')
+        //console.log(obj)
+        $('[acao-clique]').click(function(){
+
+            //$('#conteudo').addClass('destaque')
+            //$('#conteudo').removeClass('destaque')
+            //$('ul li').addClass('destaque')
+            //$('ul#lista li').addClass('destaque')
+            //$('h1').addClass('destaque')
+            //$('[acao-clique]').addClass('destaque')
+            //$('[ativo="sim"]').addClass('destaque')
+            //$('*').addClass('destaque')
+
+
+            /* Encadeamento */
+            /* $('h1')
+                .css('color', 'white')
+                .addClass('destaque') */
+
+            /* Seletores exclusivos do jQuery (filtros) */
+            //$('ul li:last').addClass('destaque')
+            //$('ul li:first').addClass('destaque')
+            //$('ul li:eq(2)').addClass('destaque')
+            //$('ul li:odd').addClass('destaque')
+            //$('ul li:gt(1)').addClass('destaque')
+            //$('ul li:lt(1)').addClass('destaque')
+            //$('#area :header').addClass('destaque')
+            //$('ul li:hidden').show()
+            //$('ul li:contains("ana")').addClass('destaque')
+
+
+            /* Filtros de Formulários */
+            //$(':input').hide()
+            //$('form :input').hide()
+            //$('form :text').toggle()
+            //$('form :password').toggle()
+            //$('form :radio').toggle()
+            //$('form :checkbox').toggle()
+            //$('form :submit').toggle()
+
+
+        })
+		
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
